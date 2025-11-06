@@ -5,12 +5,11 @@ import { redirect,usePathname } from "next/navigation";
 export const Navigation = () => {
   const pathname = usePathname()
 
-
   return (
     <ToggleButtonGroup
       value={pathname}
       exclusive
-      onChange={(_, value) => redirect(value)}
+      onChange={(_, value) => redirect(value?? pathname)}
       aria-label="tabs"
       sx={{paddingY:'30px'}}
     >

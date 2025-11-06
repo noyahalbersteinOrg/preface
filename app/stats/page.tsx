@@ -1,9 +1,7 @@
-import { Box } from "@mui/material"
+import { Box } from "@mui/material";
 
-const Page = ()=> {
-    return <Box>
-        stats
-    </Box>
-}
+const Page = () => {
+  return <Box>stats</Box>;
+};
 
-export default Page
+export default Page;
