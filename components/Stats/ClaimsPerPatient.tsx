@@ -4,8 +4,6 @@ import { GridColDef } from "@mui/x-data-grid";
 import { DataGrid } from "@mui/x-data-grid";
 import { StatsCard } from "../StatsCard";
 
-const COLUMN_WIDTH = 200;
-
 const columns: GridColDef[] = [
   {
     field: "patient_id",
@@ -13,14 +11,14 @@ const columns: GridColDef[] = [
     type: "number",
     align: "center",
     headerAlign: "center",
-    width: COLUMN_WIDTH,
+    flex: 1,
   },
   {
     field: "name",
     headerName: "Patient Name",
     align: "center",
     headerAlign: "center",
-    width: COLUMN_WIDTH,
+    flex: 1,
   },
   {
     field: "count",
@@ -28,7 +26,7 @@ const columns: GridColDef[] = [
     type: "number",
     align: "center",
     headerAlign: "center",
-    width: COLUMN_WIDTH,
+    flex: 1,
   },
 ];
 
@@ -42,8 +40,13 @@ export const ClaimsPerPatient = ({
   const avg = data.reduce((prev, curr) => prev + curr.count, 0) / data.length;
 
   return (
-    <Box display="flex" flexDirection={"row"} justifyContent={"space-between"}>
-      <Paper sx={{ height: 300, width: 600 }}>
+    <Box
+      display="flex"
+      flexDirection={"row"}
+      justifyContent={"center"}
+      gap={"30px"}
+    >
+      <Paper sx={{ height: 300, width: "70%" }}>
         <DataGrid
           rows={data || []}
           columns={columns}

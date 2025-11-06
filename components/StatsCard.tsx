@@ -25,6 +25,7 @@ export const StatsCard = ({
           marginTop="10px"
           height={"100%"}
           fontWeight={700}
+          alignContent={"center"}
         >
           {value}
         </Typography>
