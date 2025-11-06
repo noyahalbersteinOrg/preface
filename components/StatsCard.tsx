@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Divider, Typography } from "@mui/material";
+import { Box, Card, Divider, Typography } from "@mui/material";
 
 export const StatsCard = ({
   title,
@@ -24,6 +24,7 @@ export const StatsCard = ({
           fontSize="36px"
           marginTop="10px"
           height={"100%"}
+          fontWeight={700}
         >
           {value}
         </Typography>

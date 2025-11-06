@@ -1,5 +1,5 @@
 import { NumbersStats } from "@/types/statistics";
-import { Box, Card, CardContent, Divider, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { StatsCard } from "../StatsCard";
 
 export const TotalNumbers = ({
@@ -12,7 +12,6 @@ export const TotalNumbers = ({
       display="flex"
       flexDirection="row"
       gap="20px"
-      paddingY="20px"
       justifyContent={"center"}
     >
       <StatsCard title="Total Patients" value={total_patients} />
