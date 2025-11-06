@@ -14,7 +14,7 @@ export const Statistices = () => {
     retry: 2,
   });
 
-  if (!data) {
+  if (!data && !isLoading) {
     return (
       <Box>
         <Typography fontSize={36}>No data available</Typography>
@@ -22,14 +22,34 @@ export const Statistices = () => {
     );
   }
 
-  return isLoading ? (
-    <Skeleton variant="rounded" width={"100%"} height={600} />
-  ) : (
+  return data && !isLoading ? (
     <Box display={"flex"} flexDirection={"column"} gap={"20px"}>
       <TotalNumbers {...data.numbers_stats} />
       <ClaimsPerPatient data={data.claims_per_patient} />
       <InvoicesPerClaim data={data.invoices_per_claim} />
       <ReconcileData count={data.reconcile_count} />
+    </Box>
+  ) : (
+    <DashboardSkeleton />
+  );
+};
+
+const DashboardSkeleton = () => {
+  return (
+    <Box display={"flex"} flexDirection={"column"} gap={"20px"}>
+      <Box
+        display="flex"
+        flexDirection="row"
+        gap="20px"
+        justifyContent={"center"}
+      >
+        <Skeleton variant="rounded" width={250} height={175} />
+        <Skeleton variant="rounded" width={250} height={175} />
+        <Skeleton variant="rounded" width={250} height={175} />
+      </Box>
+
+      <Skeleton variant="rounded" width={"100%"} height={300} />
+      <Skeleton variant="rounded" width={"100%"} height={300} />
     </Box>
   );
 };
